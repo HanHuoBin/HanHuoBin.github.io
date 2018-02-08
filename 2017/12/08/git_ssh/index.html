@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Android性能优化之一：ViewStub介绍ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0) 优点实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View 缺点 ViewStub所要替代的layout文件中不能有标签 ViewStub在加载完后会被移除，或者说是被加载进来的layout替换">
+<meta name="description" content="Git中SSH key生成步骤第一步 进入根目录.ssh文件夹下12$ cd ~/.ssh$ ll   //查看当前已存在的秘钥文件 有 .pub 后缀的文件就是公钥，另一个文件则是密钥。假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在 MSysGit 包里： 1$ s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android性能优化之一：ViewStub">
-<meta property="og:url" content="http://yoursite.com/2018/02/08/Android性能优化之一：ViewStub/index.html">
+<meta property="og:title" content="Git中SSH key生成步骤">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/git_ssh/index.html">
 <meta property="og:site_name" content="hanbin&#39;s blog">
-<meta property="og:description" content="Android性能优化之一：ViewStub介绍ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0) 优点实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View 缺点 ViewStub所要替代的layout文件中不能有标签 ViewStub在加载完后会被移除，或者说是被加载进来的layout替换">
+<meta property="og:description" content="Git中SSH key生成步骤第一步 进入根目录.ssh文件夹下12$ cd ~/.ssh$ ll   //查看当前已存在的秘钥文件 有 .pub 后缀的文件就是公钥，另一个文件则是密钥。假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在 MSysGit 包里： 1$ s">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-02-08T02:20:45.000Z">
+<meta property="og:updated_time" content="2018-02-08T02:26:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android性能优化之一：ViewStub">
-<meta name="twitter:description" content="Android性能优化之一：ViewStub介绍ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0) 优点实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View 缺点 ViewStub所要替代的layout文件中不能有标签 ViewStub在加载完后会被移除，或者说是被加载进来的layout替换">
+<meta name="twitter:title" content="Git中SSH key生成步骤">
+<meta name="twitter:description" content="Git中SSH key生成步骤第一步 进入根目录.ssh文件夹下12$ cd ~/.ssh$ ll   //查看当前已存在的秘钥文件 有 .pub 后缀的文件就是公钥，另一个文件则是密钥。假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在 MSysGit 包里： 1$ s">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/08/Android性能优化之一：ViewStub/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/08/git_ssh/"/>
 
 
 
 
 
-  <title>Android性能优化之一：ViewStub | hanbin's blog</title>
+  <title>Git中SSH key生成步骤 | hanbin's blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/Android性能优化之一：ViewStub/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/08/git_ssh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hanbin">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android性能优化之一：ViewStub</h1>
+          <h1 class="post-title" itemprop="name headline">Git中SSH key生成步骤</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T10:20:07+08:00">
-                2018-02-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-08T11:20:00+08:00">
+                2017-12-08
               </time>
             
 
@@ -299,35 +299,13 @@
       
 
       
-        <h1 id="Android性能优化之一：ViewStub"><a href="#Android性能优化之一：ViewStub" class="headerlink" title="Android性能优化之一：ViewStub"></a>Android性能优化之一：ViewStub</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0)</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>ViewStub所要替代的layout文件中不能有<merge>标签</merge></li>
-<li>ViewStub在加载完后会被移除，或者说是被加载进来的layout替换掉了</li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_marginLeft=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginRight=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginTop=&quot;@dimen/dp_50&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;hello,this is a example.\nI&apos;m a TextView.\nI want to show ViewStub.&quot;</span><br><span class="line">        android:textColor=&quot;@color/black&quot;</span><br><span class="line">        android:textSize=&quot;@dimen/text_size_16&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ViewStub</span><br><span class="line">        android:id=&quot;@+id/stub_layout&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;300dp&quot;</span><br><span class="line">        android:layout=&quot;@layout/layout_image_view&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_extend&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_margin=&quot;@dimen/dp_5&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:text=&quot;展开&quot;</span><br><span class="line">        android:textColor=&quot;@color/gray&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
-<p>此处加个id为tv_extend的TextView是为了演示用的，点击显示和隐藏ViewStub，类似很多评论区的展开和收缩</p>
-<p>布局 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
-
-
-<pre><code>&lt;ImageView
-    android:id=&quot;@+id/img_logo&quot;
-    android:src=&quot;@mipmap/background&quot;
-    android:layout_width=&quot;300dp&quot;
-    android:layout_height=&quot;300dp&quot;
-    android:layout_marginTop=&quot;@dimen/dp_40&quot;
-    android:scaleType=&quot;centerCrop&quot; /&gt;
-
-&lt;TextView
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_marginTop=&quot;@dimen/dp_10&quot;
-    android:gravity=&quot;center&quot;
-    android:text=&quot;hello,I&apos;m TextView.\n I&apos;m ImageView&quot;/&gt;
-</code></pre><p></p></linearlayout><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">点击展开具体交互，这里为了简单，用了文字做判断，大家不要这么写</span><br></pre></td></tr></table></figure><p></p>
-<p> @Override<br>    public void onClick(View v) {<br>        switch (v.getId()) {<br>            case R.id.tv_extend:<br>                if(extendTv.getText().equals(“展开”)){<br>                    viewStub.setVisibility(View.VISIBLE);<br>                    extendTv.setText(“关闭”);<br>                }else{<br>                    viewStub.setVisibility(View.GONE);<br>                    extendTv.setText(“展开”);<br>                }<br>                break;<br>        }<br>    }<br>```</p>
+        <h1 id="Git中SSH-key生成步骤"><a href="#Git中SSH-key生成步骤" class="headerlink" title="Git中SSH key生成步骤"></a>Git中SSH key生成步骤</h1><h2 id="第一步-进入根目录-ssh文件夹下"><a href="#第一步-进入根目录-ssh文件夹下" class="headerlink" title="第一步 进入根目录.ssh文件夹下"></a>第一步 进入根目录.ssh文件夹下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ll   //查看当前已存在的秘钥文件</span><br></pre></td></tr></table></figure>
+<p>有 .pub 后缀的文件就是公钥，另一个文件则是密钥。假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在 MSysGit 包里：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
+<p>秘钥类型用-t选项指定。如果不指定则默认生成用于SSH-2的RSA秘钥。这里用的rsa</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot; -f &quot;demo&quot;</span><br></pre></td></tr></table></figure>
+<p>这里的-f是自定义生成文件名</p>
+<h2 id="第二步-github或者git远程仓库设置key"><a href="#第二步-github或者git远程仓库设置key" class="headerlink" title="第二步 github或者git远程仓库设置key"></a>第二步 github或者git远程仓库设置key</h2><p>登录github。打开setting-&gt;SSH keys，点击右上角 New SSH key，把生成好的公钥id_rsa.pub放进key输入框中，再为当前的key起一个title来区分每个key。</p>
 
       
     </div>
@@ -352,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/30/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/08/28/git_rm_cached/" rel="next" title="git .ignore不起作用">
+                <i class="fa fa-chevron-left"></i> git .ignore不起作用
               </a>
             
           </div>
@@ -361,6 +339,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/28/blog/" rel="prev" title="Mac搭建基于Github的Hexo博客笔记">
+                Mac搭建基于Github的Hexo博客笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -474,7 +456,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android性能优化之一：ViewStub"><span class="nav-number">1.</span> <span class="nav-text">Android性能优化之一：ViewStub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">1.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">1.3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">1.4.</span> <span class="nav-text">用法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git中SSH-key生成步骤"><span class="nav-number">1.</span> <span class="nav-text">Git中SSH key生成步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步-进入根目录-ssh文件夹下"><span class="nav-number">1.1.</span> <span class="nav-text">第一步 进入根目录.ssh文件夹下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步-github或者git远程仓库设置key"><span class="nav-number">1.2.</span> <span class="nav-text">第二步 github或者git远程仓库设置key</span></a></li></ol></li></ol></div>
             
 
           </div>
