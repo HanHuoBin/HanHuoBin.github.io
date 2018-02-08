@@ -229,6 +229,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/Android性能优化之一：ViewStub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hanbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hanbin's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/Android性能优化之一：ViewStub/" itemprop="url">Android性能优化之一：ViewStub</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T10:20:07+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Android性能优化之一：ViewStub"><a href="#Android性能优化之一：ViewStub" class="headerlink" title="Android性能优化之一：ViewStub"></a>Android性能优化之一：ViewStub</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0)</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>ViewStub所要替代的layout文件中不能有<merge>标签</merge></li>
+<li>ViewStub在加载完后会被移除，或者说是被加载进来的layout替换掉了</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_marginLeft=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginRight=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginTop=&quot;@dimen/dp_50&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;hello,this is a example.\nI&apos;m a TextView.\nI want to show ViewStub.&quot;</span><br><span class="line">        android:textColor=&quot;@color/black&quot;</span><br><span class="line">        android:textSize=&quot;@dimen/text_size_16&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ViewStub</span><br><span class="line">        android:id=&quot;@+id/stub_layout&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;300dp&quot;</span><br><span class="line">        android:layout=&quot;@layout/layout_image_view&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_extend&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_margin=&quot;@dimen/dp_5&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:text=&quot;展开&quot;</span><br><span class="line">        android:textColor=&quot;@color/gray&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>此处加个id为tv_extend的TextView是为了演示用的，点击显示和隐藏ViewStub，类似很多评论区的展开和收缩</p>
+<p>布局 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
+<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+
+
+<pre><code>&lt;ImageView
+    android:id=&quot;@+id/img_logo&quot;
+    android:src=&quot;@mipmap/background&quot;
+    android:layout_width=&quot;300dp&quot;
+    android:layout_height=&quot;300dp&quot;
+    android:layout_marginTop=&quot;@dimen/dp_40&quot;
+    android:scaleType=&quot;centerCrop&quot; /&gt;
+
+&lt;TextView
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_marginTop=&quot;@dimen/dp_10&quot;
+    android:gravity=&quot;center&quot;
+    android:text=&quot;hello,I&apos;m TextView.\n I&apos;m ImageView&quot;/&gt;
+</code></pre><p></p></linearlayout><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">点击展开具体交互，这里为了简单，用了文字做判断，大家不要这么写</span><br></pre></td></tr></table></figure><p></p>
+<p> @Override<br>    public void onClick(View v) {<br>        switch (v.getId()) {<br>            case R.id.tv_extend:<br>                if(extendTv.getText().equals(“展开”)){<br>                    viewStub.setVisibility(View.VISIBLE);<br>                    extendTv.setText(“关闭”);<br>                }else{<br>                    viewStub.setVisibility(View.GONE);<br>                    extendTv.setText(“展开”);<br>                }<br>                break;<br>        }<br>    }<br>```</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/git_rm_cached/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -430,154 +578,6 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/StubView使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="hanbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hanbin's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/21/StubView使用/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-21T13:27:35+08:00">
-                2017-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Android性能优化之一：ViewStub"><a href="#Android性能优化之一：ViewStub" class="headerlink" title="Android性能优化之一：ViewStub"></a>Android性能优化之一：ViewStub</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>ViewStub 是一个轻量级的View，没有尺寸，不绘制任何东西，因此绘制或者移除时更省时。(ViewStub不可见，大小为0)</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>实现View的延迟加载，避免资源的浪费，减少渲染时间，在需要的时候才加载View</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>ViewStub所要替代的layout文件中不能有<merge>标签</merge></li>
-<li>ViewStub在加载完后会被移除，或者说是被加载进来的layout替换掉了</li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:layout_marginLeft=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginRight=&quot;@dimen/dp_30&quot;</span><br><span class="line">    android:layout_marginTop=&quot;@dimen/dp_50&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;hello,this is a example.\nI&apos;m a TextView.\nI want to show ViewStub.&quot;</span><br><span class="line">        android:textColor=&quot;@color/black&quot;</span><br><span class="line">        android:textSize=&quot;@dimen/text_size_16&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ViewStub</span><br><span class="line">        android:id=&quot;@+id/stub_layout&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;300dp&quot;</span><br><span class="line">        android:layout=&quot;@layout/layout_image_view&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_extend&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_margin=&quot;@dimen/dp_5&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:text=&quot;展开&quot;</span><br><span class="line">        android:textColor=&quot;@color/gray&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
-<p>此处加个id为tv_extend的TextView是为了演示用的，点击显示和隐藏ViewStub，类似很多评论区的展开和收缩</p>
-<p>布局 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
-<linearlayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
-
-
-<pre><code>&lt;ImageView
-    android:id=&quot;@+id/img_logo&quot;
-    android:src=&quot;@mipmap/background&quot;
-    android:layout_width=&quot;300dp&quot;
-    android:layout_height=&quot;300dp&quot;
-    android:layout_marginTop=&quot;@dimen/dp_40&quot;
-    android:scaleType=&quot;centerCrop&quot; /&gt;
-
-&lt;TextView
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_marginTop=&quot;@dimen/dp_10&quot;
-    android:gravity=&quot;center&quot;
-    android:text=&quot;hello,I&apos;m TextView.\n I&apos;m ImageView&quot;/&gt;
-</code></pre><p></p></linearlayout><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">点击展开具体交互，这里为了简单，用了文字做判断，大家不要这么写</span><br></pre></td></tr></table></figure><p></p>
-<p> @Override<br>    public void onClick(View v) {<br>        switch (v.getId()) {<br>            case R.id.tv_extend:<br>                if(extendTv.getText().equals(“展开”)){<br>                    viewStub.setVisibility(View.VISIBLE);<br>                    extendTv.setText(“关闭”);<br>                }else{<br>                    viewStub.setVisibility(View.GONE);<br>                    extendTv.setText(“展开”);<br>                }<br>                break;<br>        }<br>    }<br>```</p>
 
           
         
